@@ -1,0 +1,693 @@
+<html lang="en">
+
+  <head>
+    <script>
+      window.FontAwesomeConfig = {
+        autoReplaceSvg: 'nest'
+      };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Vanza Cleaning Services for quotes and bookings. Call, email, or send a message — serving Central and Greater London.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vanzacleaning.co.uk/contact.html">
+    <meta property="og:title" content="Contact & Get a Quote | Vanza Cleaning Services">
+    <meta property="og:description" content="Contact Vanza Cleaning Services for quotes and bookings. Call, email, or send a message — serving Central and Greater London.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vanzacleaning.co.uk/contact.html">
+
+    <title>Contact & Get a Quote | Vanza Cleaning Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme:
+        {
+          extend:
+          {
+            colors:
+            {
+              vanza:
+              {
+                primary: '#1a7a6e', // Deep teal
+                dark: '#0e4d44', // Dark teal
+                accent: '#23a090', // Light teal accent
+                bg: '#faf8f5', // Warm cream
+                white: '#ffffff',
+                textDark: '#1a1f1e' // Warm dark
+              }
+            },
+            fontFamily:
+            {
+              playfair: ['"Playfair Display"', 'serif'],
+              sans: ['"DM Sans"', 'sans-serif'],
+            },
+            animation:
+            {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'progress': 'progress 2s ease-in-out forwards',
+              'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+              'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+              'spin-slow': 'spin 3s linear infinite',
+            },
+            keyframes:
+            {
+              fadeInUp:
+              {
+                '0%':
+                {
+                  opacity: '0',
+                  transform: 'translateY(20px)'
+                },
+                '100%':
+                {
+                  opacity: '1',
+                  transform: 'translateY(0)'
+                },
+              },
+              slideInRight:
+              {
+                '0%':
+                {
+                  opacity: '0',
+                  transform: 'translateX(30px)'
+                },
+                '100%':
+                {
+                  opacity: '1',
+                  transform: 'translateX(0)'
+                },
+              },
+              slideInLeft:
+              {
+                '0%':
+                {
+                  opacity: '0',
+                  transform: 'translateX(-30px)'
+                },
+                '100%':
+                {
+                  opacity: '1',
+                  transform: 'translateX(0)'
+                },
+              },
+              progress:
+              {
+                '0%':
+                {
+                  width: '0%'
+                },
+                '100%':
+                {
+                  width: '100%'
+                },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+      body
+      {
+        margin: 0;
+        padding: 0;
+      }
+
+      ::-webkit-scrollbar
+      {
+        display: none;
+      }
+
+      /* Scroll Progress Bar */
+      #scroll-progress
+      {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(to right, #1a7a6e, #23a090);
+        width: 0%;
+        z-index: 1000;
+        transition: width 0.1s ease;
+      }
+
+      /* Hover Lift Effect */
+      .hover-lift
+      {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-lift:hover
+      {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(26, 122, 110, 0.15);
+      }
+
+      /* Nav underline animation */
+      .nav-link
+      {
+        position: relative;
+      }
+
+      .nav-link::after
+      {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #1a7a6e;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after
+      {
+        width: 100%;
+      }
+
+      /* Success State Transition */
+      .success-enter
+      {
+        opacity: 0;
+        transform: scale(0.95);
+        display: none;
+      }
+
+      .success-enter-active
+      {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 0.5s, transform 0.5s;
+        display: flex;
+      }
+
+      .form-hidden
+      {
+        display: none;
+      }
+    </style>
+    
+    <!-- Google Analytics — replace GA_MEASUREMENT_ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+
+    <!-- Meta Pixel — replace YOUR_PIXEL_ID -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img loading="lazy" height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" /></noscript>
+    -->
+
+    <link rel="stylesheet" href="css/vanza.css">
+
+  </head>
+
+  <body
+    class="m-0 p-0 bg-vanza-bg font-sans text-vanza-textDark overflow-x-hidden">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div><!-- Sticky Top Bar -->
+    <div id="top-bar"
+      class="bg-vanza-dark text-vanza-white py-2 px-6 text-sm hidden md:block w-full z-50 relative">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex gap-6"><a href="mailto:hello@vanzacleaning.co.uk"
+            class="flex items-center gap-2 hover:text-vanza-accent transition-colors"><i
+              class="fa-regular fa-envelope"></i> hello@vanzacleaning.co.uk
+          </a><a href="tel:+442012345678"
+            class="flex items-center gap-2 hover:text-vanza-accent transition-colors"><i
+              class="fa-solid fa-phone"></i> 020 1234 5678
+          </a></div>
+        <div class="flex items-center gap-2"><i
+            class="fa-solid fa-location-dot"></i> Serving Central &amp; Greater
+          London
+        </div>
+      </div>
+    </div><!-- Main Navigation -->
+    <header id="header"
+      class="bg-vanza-white sticky top-0 z-40 w-full shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300">
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <!-- Logo --><a href="#" class="flex items-center gap-3 group"><span
+            class="font-playfair text-2xl font-bold tracking-tight text-vanza-textDark">Vanza
+            Cleaning&nbsp;</span></a><!-- Desktop Nav -->
+        <nav id="primary-nav" class="hidden lg:flex items-center gap-8"><a href="index.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Home</a><a
+            href="about.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">About Us</a><a
+            href="services.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Services</a><a
+            href="faq.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">FAQ</a><a href="contact.html"
+            class="nav-link active font-medium text-vanza-primary">Contact</a>
+        </nav><!-- CTA & Mobile Menu -->
+        <div class="flex items-center gap-4"><a href="#"
+            class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-vanza-primary text-vanza-white rounded-full font-medium hover:bg-vanza-dark transition-colors shadow-[0_4px_14px_rgba(26,122,110,0.3)] hover:shadow-[0_6px_20px_rgba(26,122,110,0.4)]">
+            Get a Free Quote
+          </a><button
+            data-nav-toggle aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" class="lg:hidden text-vanza-textDark text-2xl p-2 focus:outline-none"><i
+              class="fa-solid fa-bars"></i></button></div>
+      </div>
+    </header><!-- Hero Section -->
+    <section id="contact-hero"
+      class="relative w-full overflow-hidden bg-gradient-to-br from-vanza-dark to-vanza-primary py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vanza-white/10 backdrop-blur-sm border border-vanza-white/20 text-vanza-white text-sm font-medium mb-6 animate-fade-in-up">
+          <span class="w-2 h-2 rounded-full bg-vanza-accent"></span> We're here
+          to help
+        </div>
+        <h1
+          class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-vanza-white mb-6 animate-fade-in-up"
+          id="iq32g">
+          Get in Touch
+        </h1>
+        <p class="text-vanza-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 animate-fade-in-up"
+          id="iid76">
+          Whether you need a quick quote, have a question about our services, or
+          want to schedule a clean, our team is ready to assist you.
+        </p>
+      </div><!-- Decorative elements -->
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-vanza-accent/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-80 h-80 bg-vanza-primary/30 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4">
+      </div>
+    </section><!-- Contact Cards Row -->
+    <section id="contact-cards"
+      class="max-w-7xl mx-auto px-6 -mt-16 relative z-20 mb-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Call Us Card --><a href="tel:+442012345678"
+          class="bg-vanza-white rounded-[24px] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-vanza-textDark/5 hover-lift flex flex-col items-center text-center animate-fade-in-up"
+          id="in8h8">
+          <div
+            class="w-16 h-16 rounded-full bg-vanza-primary/10 flex items-center justify-center text-vanza-primary text-2xl mb-6">
+            <i class="fa-solid fa-phone"></i></div>
+          <h3 class="font-playfair text-xl font-bold text-vanza-textDark mb-2">
+            Call Us</h3>
+          <p class="text-vanza-textDark/60 text-sm mb-4">Mon-Fri from 8am to
+            6pm.</p><span
+            class="font-medium text-vanza-primary text-lg mt-auto">020 1234
+            5678</span>
+        </a><!-- Email Us Card --><a href="mailto:hello@vanzacleaning.co.uk"
+          class="bg-vanza-white rounded-[24px] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-vanza-textDark/5 hover-lift flex flex-col items-center text-center animate-fade-in-up"
+          id="ilday">
+          <div
+            class="w-16 h-16 rounded-full bg-vanza-primary/10 flex items-center justify-center text-vanza-primary text-2xl mb-6">
+            <i class="fa-regular fa-envelope"></i></div>
+          <h3 class="font-playfair text-xl font-bold text-vanza-textDark mb-2">
+            Email Us</h3>
+          <p class="text-vanza-textDark/60 text-sm mb-4">We aim to reply within
+            2 hours.</p><span
+            class="font-medium text-vanza-primary text-lg mt-auto">hello@vanzacleaning.co.uk</span>
+        </a><!-- Book Online Card --><a href="#"
+          class="bg-vanza-white rounded-[24px] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-vanza-textDark/5 hover-lift flex flex-col items-center text-center animate-fade-in-up"
+          id="iodpc">
+          <div
+            class="w-16 h-16 rounded-full bg-vanza-primary/10 flex items-center justify-center text-vanza-primary text-2xl mb-6">
+            <i class="fa-regular fa-calendar-check"></i></div>
+          <h3 class="font-playfair text-xl font-bold text-vanza-textDark mb-2">
+            Book Online</h3>
+          <p class="text-vanza-textDark/60 text-sm mb-4">Schedule your clean
+            instantly.</p><span
+            class="font-medium text-vanza-primary text-lg mt-auto flex items-center gap-2">Book
+            Now <i class="fa-solid fa-arrow-right text-sm"></i></span>
+        </a>
+      </div>
+    </section><!-- Main Content: Details & Form Grid -->
+    <section id="details-and-form-grid"
+      class="py-16 md:py-24 w-full bg-vanza-bg">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="bg-vanza-white rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-vanza-textDark/5 overflow-hidden flex flex-col lg:flex-row">
+          <!-- Left Column: Contact Details -->
+          <div
+            class="w-full lg:w-5/12 bg-vanza-dark text-vanza-white p-10 md:p-16 flex flex-col relative overflow-hidden">
+            <!-- Decorative BG -->
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-vanza-primary/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div class="relative z-10">
+              <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-8">
+                Contact Information</h2>
+              <div class="space-y-8 mb-12">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent shrink-0">
+                    <i class="fa-solid fa-location-dot text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold text-lg mb-1">Our Office</h4>
+                    <p class="text-vanza-white/70 leading-relaxed">123 Clean
+                      Street,<br>Central London, UK<br>SW1A 1AA</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent shrink-0">
+                    <i class="fa-solid fa-phone text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold text-lg mb-1">Phone Number</h4>
+                    <p class="text-vanza-white/70">020 1234 5678</p>
+                    <p class="text-vanza-white/50 text-sm mt-1">Mon-Fri 8am to
+                      6pm</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent shrink-0">
+                    <i class="fa-solid fa-envelope text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold text-lg mb-1">Email Address</h4>
+                    <p class="text-vanza-white/70">hello@vanzacleaning.co.uk</p>
+                    <p class="text-vanza-white/50 text-sm mt-1">We reply within
+                      2 hours</p>
+                  </div>
+                </div>
+              </div><!-- Opening Hours Table -->
+              <div
+                class="bg-vanza-white/5 rounded-2xl p-6 border border-vanza-white/10 mb-8 backdrop-blur-sm">
+                <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i
+                    class="fa-regular fa-clock text-vanza-accent"></i> Opening
+                  Hours
+                </h4>
+                <ul class="space-y-3 text-sm">
+                  <li
+                    class="flex justify-between items-center border-b border-vanza-white/10 pb-2">
+                    <span class="text-vanza-white/70">Monday -
+                      Friday</span><span
+                      class="font-medium text-vanza-white">08:00 - 18:00</span>
+                  </li>
+                  <li
+                    class="flex justify-between items-center border-b border-vanza-white/10 pb-2">
+                    <span class="text-vanza-white/70">Saturday</span><span
+                      class="font-medium text-vanza-white">09:00 - 16:00</span>
+                  </li>
+                  <li class="flex justify-between items-center pt-1"><span
+                      class="text-vanza-white/70">Sunday</span><span
+                      class="font-medium text-vanza-accent">Closed</span></li>
+                </ul>
+              </div><!-- Socials -->
+              <div class="mt-auto pt-8">
+                <p
+                  class="text-sm text-vanza-white/50 mb-4 uppercase tracking-wider font-bold">
+                  Follow Us</p>
+                <div class="flex gap-4"><a href="#"
+                    class="w-10 h-10 rounded-full bg-vanza-white/10 flex items-center justify-center hover:bg-vanza-primary transition-colors text-vanza-white"><i
+                      class="fa-brands fa-instagram"></i></a><a href="#"
+                    class="w-10 h-10 rounded-full bg-vanza-white/10 flex items-center justify-center hover:bg-vanza-primary transition-colors text-vanza-white"><i
+                      class="fa-brands fa-facebook-f"></i></a><a href="#"
+                    class="w-10 h-10 rounded-full bg-vanza-white/10 flex items-center justify-center hover:bg-vanza-primary transition-colors text-vanza-white"><i
+                      class="fa-brands fa-twitter"></i></a></div>
+              </div>
+            </div>
+          </div><!-- Right Column: Form Area -->
+          <div class="w-full lg:w-7/12 p-10 md:p-16 bg-vanza-white relative">
+            <!-- Form Container -->
+            <div id="contact-form-container">
+              <div class="mb-10">
+                <h2
+                  class="font-playfair text-3xl md:text-4xl font-bold text-vanza-textDark mb-4">
+                  Send us a message</h2>
+                <p class="text-vanza-textDark/60">Fill out the form below and
+                  our team will get back to you shortly.</p>
+              </div>
+              <form id="main-contact-form"
+                onsubmit="event.preventDefault(); submitForm();"
+                class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Name -->
+                  <div class="space-y-2"><label for="name"
+                      class="block text-sm font-medium text-vanza-textDark/80">Full
+                      Name</label><input type="text" id="name" required=""
+                      placeholder="John Doe"
+                      class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30">
+                  </div><!-- Email -->
+                  <div class="space-y-2"><label for="email"
+                      class="block text-sm font-medium text-vanza-textDark/80">Email
+                      Address</label><input type="email" id="email" required=""
+                      placeholder="john@example.com"
+                      class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30">
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Phone -->
+                  <div class="space-y-2"><label for="phone"
+                      class="block text-sm font-medium text-vanza-textDark/80">Phone
+                      Number (Optional)</label><input type="tel" id="phone"
+                      placeholder="07700 900000"
+                      class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30">
+                  </div><!-- Subject Dropdown -->
+                  <div class="space-y-2"><label for="subject"
+                      class="block text-sm font-medium text-vanza-textDark/80">Subject</label>
+                    <div class="relative"><select id="subject" required=""
+                        class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark appearance-none cursor-pointer">
+                        <option value="" disabled="" selected="">Select an
+                          inquiry type</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="quote">Request a Quote</option>
+                        <option value="booking">Existing Booking</option>
+                        <option value="commercial">Commercial Services</option>
+                        <option value="feedback">Feedback</option>
+                      </select>
+                      <div
+                        class="absolute inset-y-0 right-0 flex items-center px-5 pointer-events-none text-vanza-textDark/50">
+                        <i class="fa-solid fa-chevron-down text-xs"></i></div>
+                    </div>
+                  </div>
+                </div><!-- Message -->
+                <div class="space-y-2"><label for="message"
+                    class="block text-sm font-medium text-vanza-textDark/80">Your
+                    Message</label><textarea id="message" required="" rows="5" placeholder="How can we help you today?" class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30 resize-none"></textarea>
+                </div><!-- Privacy Checkbox -->
+                <div class="flex items-start gap-3 pt-2">
+                  <div class="flex items-center h-5"><input id="privacy"
+                      type="checkbox" required=""
+                      class="w-4 h-4 border border-vanza-textDark/20 rounded bg-vanza-bg checked:bg-vanza-primary checked:border-vanza-primary focus:ring-vanza-primary/30 focus:ring-2 cursor-pointer transition-colors accent-vanza-primary">
+                  </div><label for="privacy"
+                    class="text-sm text-vanza-textDark/60 cursor-pointer">
+                    I agree to the <a href="#"
+                      class="text-vanza-primary hover:underline">Privacy
+                      Policy</a> and consent to being contacted regarding my
+                    inquiry.
+                  </label>
+                </div><!-- Submit Button -->
+                <div class="pt-4"><button type="submit" id="submit-btn"
+                    class="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-vanza-primary text-vanza-white rounded-xl font-medium hover:bg-vanza-dark transition-colors shadow-[0_4px_14px_rgba(26,122,110,0.3)] hover:shadow-[0_6px_20px_rgba(26,122,110,0.4)] group relative overflow-hidden"><span
+                      id="btn-text" class="flex items-center gap-2">Send Message
+                      <i
+                        class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i></span>
+                    <!-- Loading Spinner (Hidden by default) --><span
+                      id="btn-loader"
+                      class="absolute inset-0 flex items-center justify-center bg-vanza-dark hidden"><i
+                        class="fa-solid fa-circle-notch animate-spin text-xl"></i></span></button>
+                </div>
+              </form>
+            </div><!-- Success State (Hidden by default) -->
+            <div id="success-message"
+              class="hidden flex-col items-center justify-center text-center h-full min-h-[500px] success-enter">
+              <div
+                class="w-24 h-24 bg-vanza-primary/10 rounded-full flex items-center justify-center mb-8">
+                <i class="fa-solid fa-check text-vanza-primary text-4xl"></i>
+              </div>
+              <h3
+                class="font-playfair text-3xl font-bold text-vanza-textDark mb-4">
+                Message Sent!</h3>
+              <p class="text-vanza-textDark/70 text-lg max-w-md mb-8">
+                Thank you for reaching out. We've received your message and will
+                get back to you within 2 hours during working hours.
+              </p><button onclick="resetForm()"
+                class="inline-flex items-center justify-center px-8 py-3 bg-vanza-bg text-vanza-textDark border border-vanza-textDark/10 rounded-xl font-medium hover:bg-vanza-textDark/5 transition-colors">
+                Send Another Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- Quick Links / Booking Shortcuts -->
+    <section id="quick-booking-links"
+      class="py-16 bg-vanza-white border-t border-vanza-textDark/5 w-full">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <h3 class="font-playfair text-2xl font-bold text-vanza-textDark mb-2">
+            Ready to book a service?</h3>
+          <p class="text-vanza-textDark/60">Skip the inquiry and book directly
+            online in under 60 seconds.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4"><a
+            href="?service=deep-cleaning"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-vanza-bg border border-vanza-textDark/10 rounded-full text-vanza-textDark font-medium hover:border-vanza-primary hover:text-vanza-primary transition-all hover-lift"><i
+              class="fa-solid fa-sparkles text-vanza-primary"></i> Deep Cleaning
+          </a><a href="?service=end-of-tenancy"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-vanza-bg border border-vanza-textDark/10 rounded-full text-vanza-textDark font-medium hover:border-vanza-primary hover:text-vanza-primary transition-all hover-lift"><i
+              class="fa-solid fa-key text-vanza-primary"></i> End of Tenancy
+          </a><a href="?service=recurring"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-vanza-bg border border-vanza-textDark/10 rounded-full text-vanza-textDark font-medium hover:border-vanza-primary hover:text-vanza-primary transition-all hover-lift"><i
+              class="fa-solid fa-calendar-rotate text-vanza-primary"></i>
+            Recurring Clean
+          </a><a href="?service=commercial"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-vanza-bg border border-vanza-textDark/10 rounded-full text-vanza-textDark font-medium hover:border-vanza-primary hover:text-vanza-primary transition-all hover-lift"><i
+              class="fa-solid fa-building text-vanza-primary"></i> Commercial
+          </a></div>
+      </div>
+    </section><!-- Footer -->
+    <footer id="footer"
+      class="bg-vanza-textDark text-vanza-white pt-20 pb-10 w-full">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- Brand -->
+          <div><a href="#" class="flex items-center gap-3 mb-6"><span
+                class="font-playfair text-2xl font-bold tracking-tight">Vanza
+                Properties Ltd (Trading as Vanza Cleaning)</span></a>
+            <p class="text-vanza-white/60 text-sm leading-relaxed mb-6">
+              London's premier cleaning service, dedicated to providing
+              impeccable results and unmatched care for your home or business.
+            </p>
+          </div><!-- Services Links -->
+          <div>
+            <h4 class="font-bold text-lg mb-6">Services</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Deep
+                  Cleaning</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">End of
+                  Tenancy</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Recurring
+                  Cleans</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">One-Off
+                  Cleaning</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Commercial
+                  Cleaning</a></li>
+            </ul>
+          </div><!-- Company Links -->
+          <div>
+            <h4 class="font-bold text-lg mb-6">Company</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">About Us</a>
+              </li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">How It
+                  Works</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">FAQ</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Contact</a>
+              </li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Careers</a>
+              </li>
+            </ul>
+          </div><!-- Contact Info -->
+          <div>
+            <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-location-dot mt-1 text-vanza-accent"></i><span>123
+                  Clean Street, Central London, UK</span></li>
+              <li class="flex items-center gap-3"><i
+                  class="fa-solid fa-phone text-vanza-accent"></i><a
+                  href="tel:+442012345678"
+                  class="hover:text-vanza-accent transition-colors">020 1234
+                  5678</a></li>
+              <li class="flex items-center gap-3"><i
+                  class="fa-solid fa-envelope text-vanza-accent"></i><a
+                  href="mailto:hello@vanzacleaning.co.uk"
+                  class="hover:text-vanza-accent transition-colors">hello@vanzacleaning.co.uk</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-vanza-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-vanza-white/40">
+          <p>© 2024 Vanza Cleaning Services. All rights reserved.</p>
+          <div class="flex gap-6"><a href="#"
+              class="hover:text-vanza-white transition-colors">Privacy
+              Policy</a><a href="#"
+              class="hover:text-vanza-white transition-colors">Terms of
+              Service</a></div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Form Submission Simulation
+      function submitForm()
+      {
+        const btnText = document.getElementById('btn-text');
+        const btnLoader = document.getElementById('btn-loader');
+        const submitBtn = document.getElementById('submit-btn');
+        const formContainer = document.getElementById('contact-form-container');
+        const successMessage = document.getElementById('success-message');
+
+        // Show loading state
+        btnText.classList.add('invisible');
+        btnLoader.classList.remove('hidden');
+        submitBtn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() =>
+        {
+          // Hide form, show success
+          formContainer.classList.add('form-hidden');
+
+          successMessage.classList.remove('hidden');
+          // Trigger reflow to restart animation
+          void successMessage.offsetWidth;
+          successMessage.classList.add('success-enter-active');
+
+          // Reset button state for next time
+          btnText.classList.remove('invisible');
+          btnLoader.classList.add('hidden');
+          submitBtn.disabled = false;
+
+          // Clear form
+          document.getElementById('main-contact-form').reset();
+        }, 1500);
+      }
+
+      function resetForm()
+      {
+        const formContainer = document.getElementById('contact-form-container');
+        const successMessage = document.getElementById('success-message');
+
+        successMessage.classList.remove('success-enter-active');
+        successMessage.classList.add('hidden');
+        formContainer.classList.remove('form-hidden');
+      }
+    </script>
+    <script src="js/vanza.js" defer></script>
+</body>
+
+</html>

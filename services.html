@@ -1,0 +1,766 @@
+<html lang="en">
+
+  <head>
+    <script>
+      window.FontAwesomeConfig = {
+        autoReplaceSvg: 'nest'
+      };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Vanza services: deep cleaning, end of tenancy, recurring cleans, one-off, carpet, and commercial cleaning across London.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vanzacleaning.co.uk/services.html">
+    <meta property="og:title" content="Cleaning Services | Vanza Cleaning Services London">
+    <meta property="og:description" content="Explore Vanza services: deep cleaning, end of tenancy, recurring cleans, one-off, carpet, and commercial cleaning across London.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vanzacleaning.co.uk/services.html">
+
+    <title>Cleaning Services | Vanza Cleaning Services London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme:
+        {
+          extend:
+          {
+            colors:
+            {
+              vanza:
+              {
+                primary: '#1a7a6e',
+                dark: '#0e4d44',
+                accent: '#23a090',
+                bg: '#faf8f5',
+                white: '#ffffff',
+                textDark: '#1a1f1e'
+              }
+            },
+            fontFamily:
+            {
+              playfair: ['"Playfair Display"', 'serif'],
+              sans: ['"DM Sans"', 'sans-serif'],
+            },
+            animation:
+            {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'progress': 'progress 2s ease-in-out forwards',
+              'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+              'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+            },
+            keyframes:
+            {
+              fadeInUp:
+              {
+                '0%':
+                {
+                  opacity: '0',
+                  transform: 'translateY(20px)'
+                },
+                '100%':
+                {
+                  opacity: '1',
+                  transform: 'translateY(0)'
+                },
+              },
+              slideInRight:
+              {
+                '0%':
+                {
+                  opacity: '0',
+                  transform: 'translateX(30px)'
+                },
+                '100%':
+                {
+                  opacity: '1',
+                  transform: 'translateX(0)'
+                },
+              },
+              slideInLeft:
+              {
+                '0%':
+                {
+                  opacity: '0',
+                  transform: 'translateX(-30px)'
+                },
+                '100%':
+                {
+                  opacity: '1',
+                  transform: 'translateX(0)'
+                },
+              },
+              progress:
+              {
+                '0%':
+                {
+                  width: '0%'
+                },
+                '100%':
+                {
+                  width: '100%'
+                },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+      body
+      {
+        margin: 0;
+        padding: 0;
+      }
+
+      ::-webkit-scrollbar
+      {
+        display: none;
+      }
+
+      #scroll-progress
+      {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(to right, #1a7a6e, #23a090);
+        width: 0%;
+        z-index: 1000;
+        transition: width 0.1s ease;
+      }
+
+      .hover-lift
+      {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-lift:hover
+      {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(26, 122, 110, 0.15);
+      }
+
+      .reveal
+      {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .reveal.active
+      {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav-link
+      {
+        position: relative;
+      }
+
+      .nav-link::after
+      {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #1a7a6e;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after
+      {
+        width: 100%;
+      }
+
+      .service-card-visual
+      {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card-visual::before
+      {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background: linear-gradient(to bottom, #23a090, transparent);
+        transition: height 0.4s ease;
+      }
+
+      .service-card-visual:hover::before
+      {
+        height: 6px;
+      }
+    </style>
+    
+    <!-- Google Analytics — replace GA_MEASUREMENT_ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+
+    <!-- Meta Pixel — replace YOUR_PIXEL_ID -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img loading="lazy" height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" /></noscript>
+    -->
+
+    <link rel="stylesheet" href="css/vanza.css">
+
+  </head>
+
+  <body
+    class="m-0 p-0 bg-vanza-bg font-sans text-vanza-textDark overflow-x-hidden">
+    <div id="scroll-progress"></div><!-- Sticky Top Bar -->
+    <div id="top-bar"
+      class="bg-vanza-dark text-vanza-white py-2 px-6 text-sm hidden md:block w-full z-50 relative">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex gap-6"><a href="mailto:hello@vanzacleaning.co.uk"
+            class="flex items-center gap-2 hover:text-vanza-accent transition-colors"><i
+              class="fa-regular fa-envelope"></i> hello@vanzacleaning.co.uk
+          </a><a href="tel:+442012345678"
+            class="flex items-center gap-2 hover:text-vanza-accent transition-colors"><i
+              class="fa-solid fa-phone"></i> 020 1234 5678
+          </a></div>
+        <div class="flex items-center gap-2"><i
+            class="fa-solid fa-location-dot"></i> Serving Central &amp; Greater
+          London
+        </div>
+      </div>
+    </div><!-- Main Navigation -->
+    <header id="header"
+      class="bg-vanza-white sticky top-0 z-40 w-full shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300">
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <!-- Logo --><a href="#" class="flex items-center gap-3 group"><span
+            class="font-playfair text-2xl font-bold tracking-tight text-vanza-textDark">Vanza
+            Cleaning</span></a><!-- Desktop Nav -->
+        <nav id="primary-nav" class="hidden lg:flex items-center gap-8"><a href="index.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Home</a><a
+            href="about.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">About Us</a><a
+            href="services.html"
+            class="nav-link active font-medium text-vanza-primary">Services</a><a
+            href="faq.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">FAQ</a><a href="contact.html"
+            class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Contact</a>
+        </nav><!-- CTA & Mobile Menu -->
+        <div class="flex items-center gap-4"><a href="#"
+            class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-vanza-primary text-vanza-white rounded-full font-medium hover:bg-vanza-dark transition-colors shadow-[0_4px_14px_rgba(26,122,110,0.3)] hover:shadow-[0_6px_20px_rgba(26,122,110,0.4)]">
+            Get a Free Quote
+          </a><button
+            data-nav-toggle aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" class="lg:hidden text-vanza-textDark text-2xl p-2 focus:outline-none"><i
+              class="fa-solid fa-bars"></i></button></div>
+      </div>
+    </header><!-- Services Hero Section -->
+    <section id="services-hero"
+      class="relative bg-gradient-to-br from-vanza-dark to-vanza-primary pt-24 pb-32 overflow-hidden w-full">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-vanza-accent/20 rounded-full blur-[100px]">
+        </div>
+        <div
+          class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-vanza-white/5 rounded-full blur-[120px]">
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <!-- Breadcrumb -->
+        <div
+          class="inline-flex items-center gap-2 text-sm text-vanza-white/80 mb-8 animate-fade-in-up">
+          <a href="#"
+            class="hover:text-vanza-white transition-colors">Home</a><i
+            class="fa-solid fa-chevron-right text-[10px]"></i><span
+            class="text-vanza-white font-medium">Services</span></div>
+        <h1 id="iob7a"
+          class="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-vanza-white leading-tight mb-6 animate-fade-in-up">
+          Our Premium <span class="text-vanza-accent">Cleaning Services</span>
+        </h1>
+        <p id="ixghi"
+          class="text-vanza-bg/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed animate-fade-in-up">
+          From routine maintenance to deep transformations, we offer tailored
+          cleaning solutions for every home and business in London.
+        </p>
+      </div>
+    </section><!-- Services List Sections -->
+    <div id="services-content" class="py-16">
+      <!-- Deep Cleaning (Left-Right) -->
+      <section id="deep-cleaning" class="max-w-7xl mx-auto px-6 mb-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+          <!-- Content Left -->
+          <div><span
+              class="inline-block px-4 py-1.5 rounded-full bg-vanza-primary/10 text-vanza-primary text-sm font-bold tracking-wide uppercase mb-4">Most
+              Popular</span>
+            <h2
+              class="font-playfair text-4xl lg:text-5xl font-bold text-vanza-textDark mb-4">
+              Deep Cleaning</h2>
+            <p class="text-vanza-textDark/70 text-lg mb-6 leading-relaxed">
+              A comprehensive, top-to-bottom revival of your space. Perfect for
+              spring cleaning, post-renovation, or just when your home needs a
+              thorough reset.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Inside cabinets, drawers, and
+                  appliances</span></li>
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Skirting boards, door frames, and
+                  light fixtures</span></li>
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Intensive bathroom descaling and
+                  sanitization</span></li>
+            </ul>
+            <div class="flex flex-wrap gap-4 items-center"><a href="#"
+                class="inline-flex items-center justify-center px-8 py-3.5 bg-vanza-primary text-vanza-white rounded-full font-bold hover:bg-vanza-dark transition-all shadow-lg hover:shadow-xl">
+                Book Now
+              </a><a href="deep-cleaning.html"
+                class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-vanza-primary text-vanza-primary rounded-full font-bold hover:bg-vanza-primary hover:text-vanza-white transition-all">
+                Find out more
+              </a></div>
+          </div><!-- Visual Right -->
+          <div
+            class="service-card-visual bg-gradient-to-br from-vanza-dark to-vanza-primary rounded-3xl p-10 text-center hover-lift">
+            <h3 class="font-playfair text-3xl font-bold text-vanza-white mb-3">
+              Deep Cleaning</h3>
+            <p class="text-vanza-white/80 text-lg mb-6">Complete home
+              transformation</p><span
+              class="inline-block px-5 py-2 bg-vanza-accent/20 text-vanza-accent rounded-full text-sm font-bold">Premium
+              Service</span>
+          </div>
+        </div>
+      </section><!-- End of Tenancy (Right-Left) -->
+      <section id="end-of-tenancy" class="bg-vanza-bg/50 py-16 mb-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+            <!-- Visual Left -->
+            <div
+              class="service-card-visual bg-gradient-to-br from-vanza-primary to-vanza-accent rounded-3xl p-10 text-center hover-lift lg:order-1">
+              <h3
+                class="font-playfair text-3xl font-bold text-vanza-white mb-3">
+                End of Tenancy</h3>
+              <p class="text-vanza-white/80 text-lg mb-6">Deposit-back guarantee
+              </p><span
+                class="inline-block px-5 py-2 bg-vanza-white/20 text-vanza-white rounded-full text-sm font-bold">Landlord
+                Approved</span>
+            </div><!-- Content Right -->
+            <div class="lg:order-2"><span
+                class="inline-block px-4 py-1.5 rounded-full bg-vanza-primary/10 text-vanza-primary text-sm font-bold tracking-wide uppercase mb-4">For
+                Tenants &amp; Landlords</span>
+              <h2
+                class="font-playfair text-4xl lg:text-5xl font-bold text-vanza-textDark mb-4">
+                End of Tenancy Cleaning</h2>
+              <p class="text-vanza-textDark/70 text-lg mb-6 leading-relaxed">
+                Designed specifically to meet strict inventory check standards.
+                We ensure tenants get their deposit back and landlords have a
+                property ready for new occupants.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Full oven and extractor fan deep
+                    clean</span></li>
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Inside all cupboards, wardrobes,
+                    and white goods</span></li>
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Professional limescale and mould
+                    removal</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-4 items-center"><a href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-vanza-primary text-vanza-white rounded-full font-bold hover:bg-vanza-dark transition-all shadow-lg hover:shadow-xl">
+                  Book Now
+                </a><a href="end-of-tenancy.html"
+                  class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-vanza-primary text-vanza-primary rounded-full font-bold hover:bg-vanza-primary hover:text-vanza-white transition-all">
+                  Find out more
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </section><!-- Standard & Recurring (Left-Right) -->
+      <section id="recurring-cleaning" class="max-w-7xl mx-auto px-6 mb-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+          <!-- Content Left -->
+          <div><span
+              class="inline-block px-4 py-1.5 rounded-full bg-vanza-primary/10 text-vanza-primary text-sm font-bold tracking-wide uppercase mb-4">Maintain
+              the Magic</span>
+            <h2
+              class="font-playfair text-4xl lg:text-5xl font-bold text-vanza-textDark mb-4">
+              Standard &amp; Recurring Cleans</h2>
+            <p class="text-vanza-textDark/70 text-lg mb-6 leading-relaxed">
+              Keep your home consistently beautiful with our flexible recurring
+              services. Choose from weekly, bi-weekly, or monthly schedules.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Dusting, vacuuming, and mopping
+                  all areas</span></li>
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Kitchen surfaces, sink, and
+                  appliance exteriors</span></li>
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Bathroom sanitization, mirrors,
+                  and fixtures</span></li>
+            </ul>
+            <div class="flex flex-wrap gap-4 items-center"><a href="#"
+                class="inline-flex items-center justify-center px-8 py-3.5 bg-vanza-primary text-vanza-white rounded-full font-bold hover:bg-vanza-dark transition-all shadow-lg hover:shadow-xl">
+                Book Schedule
+              </a><a href="contact.html"
+                class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-vanza-primary text-vanza-primary rounded-full font-bold hover:bg-vanza-primary hover:text-vanza-white transition-all">
+                Find out more
+              </a></div>
+          </div><!-- Visual Right -->
+          <div
+            class="service-card-visual bg-gradient-to-br from-vanza-accent to-vanza-primary rounded-3xl p-10 text-center hover-lift">
+            <h3 class="font-playfair text-3xl font-bold text-vanza-white mb-3">
+              Recurring Cleans</h3>
+            <p class="text-vanza-white/80 text-lg mb-6">Consistent excellence
+            </p><span
+              class="inline-block px-5 py-2 bg-vanza-white/20 text-vanza-white rounded-full text-sm font-bold">Flexible
+              Scheduling</span>
+          </div>
+        </div>
+      </section><!-- One-Off Cleaning (Right-Left) -->
+      <section id="one-off-cleaning" class="bg-vanza-bg/50 py-16 mb-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+            <!-- Visual Left -->
+            <div
+              class="service-card-visual bg-gradient-to-br from-vanza-dark via-vanza-primary to-vanza-accent rounded-3xl p-10 text-center hover-lift lg:order-1">
+              <h3
+                class="font-playfair text-3xl font-bold text-vanza-white mb-3">
+                One-Off Cleaning</h3>
+              <p class="text-vanza-white/80 text-lg mb-6">On-demand excellence
+              </p><span
+                class="inline-block px-5 py-2 bg-vanza-white/20 text-vanza-white rounded-full text-sm font-bold">No
+                Commitment</span>
+            </div><!-- Content Right -->
+            <div class="lg:order-2"><span
+                class="inline-block px-4 py-1.5 rounded-full bg-vanza-primary/10 text-vanza-primary text-sm font-bold tracking-wide uppercase mb-4">No
+                Commitment</span>
+              <h2
+                class="font-playfair text-4xl lg:text-5xl font-bold text-vanza-textDark mb-4">
+                One-Off Cleaning</h2>
+              <p class="text-vanza-textDark/70 text-lg mb-6 leading-relaxed">
+                Need a professional clean for a special event, after
+                renovations, or just because? Our one-off service gives you
+                flexibility exactly when you need it.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Pre-party or post-event deep
+                    clean</span></li>
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Seasonal spring or autumn
+                    refresh</span></li>
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Post-renovation or builder's
+                    clean</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-4 items-center"><a href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-vanza-primary text-vanza-white rounded-full font-bold hover:bg-vanza-dark transition-all shadow-lg hover:shadow-xl">
+                  Book Now
+                </a><a href="one-off-cleaning.html"
+                  class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-vanza-primary text-vanza-primary rounded-full font-bold hover:bg-vanza-primary hover:text-vanza-white transition-all">
+                  Find out more
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </section><!-- Carpet Cleaning (Left-Right) -->
+      <section id="carpet-cleaning" class="max-w-7xl mx-auto px-6 mb-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+          <!-- Content Left -->
+          <div><span
+              class="inline-block px-4 py-1.5 rounded-full bg-vanza-primary/10 text-vanza-primary text-sm font-bold tracking-wide uppercase mb-4">Specialist
+              Service</span>
+            <h2
+              class="font-playfair text-4xl lg:text-5xl font-bold text-vanza-textDark mb-4">
+              Carpet Cleaning</h2>
+            <p class="text-vanza-textDark/70 text-lg mb-6 leading-relaxed">
+              Professional hot water extraction cleaning that removes
+              deep-seated dirt, allergens, and stubborn stains. Safe for
+              children and pets.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Industrial-grade hot water
+                  extraction</span></li>
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Stain and odour removal
+                  treatment</span></li>
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                  class="text-vanza-textDark">Fast-drying technology (2-4
+                  hours)</span></li>
+            </ul>
+            <div class="flex flex-wrap gap-4 items-center"><a href="#"
+                class="inline-flex items-center justify-center px-8 py-3.5 bg-vanza-primary text-vanza-white rounded-full font-bold hover:bg-vanza-dark transition-all shadow-lg hover:shadow-xl">
+                Book Now
+              </a><a href="carpet-cleaning.html"
+                class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-vanza-primary text-vanza-primary rounded-full font-bold hover:bg-vanza-primary hover:text-vanza-white transition-all">
+                Find out more
+              </a></div>
+          </div><!-- Visual Right -->
+          <div
+            class="service-card-visual bg-gradient-to-br from-vanza-primary to-vanza-dark rounded-3xl p-10 text-center hover-lift">
+            <h3 class="font-playfair text-3xl font-bold text-vanza-white mb-3">
+              Carpet Cleaning</h3>
+            <p class="text-vanza-white/80 text-lg mb-6">Deep restoration</p>
+            <span
+              class="inline-block px-5 py-2 bg-vanza-accent/30 text-vanza-accent rounded-full text-sm font-bold">Eco-Friendly</span>
+          </div>
+        </div>
+      </section><!-- Commercial Cleaning (Right-Left) -->
+      <section id="commercial-cleaning" class="bg-vanza-bg/50 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+            <!-- Visual Left -->
+            <div
+              class="service-card-visual bg-gradient-to-br from-vanza-accent via-vanza-primary to-vanza-dark rounded-3xl p-10 text-center hover-lift lg:order-1">
+              <h3
+                class="font-playfair text-3xl font-bold text-vanza-white mb-3">
+                Commercial Cleaning</h3>
+              <p class="text-vanza-white/80 text-lg mb-6">Business excellence
+              </p><span
+                class="inline-block px-5 py-2 bg-vanza-white/20 text-vanza-white rounded-full text-sm font-bold">Fully
+                Insured</span>
+            </div><!-- Content Right -->
+            <div class="lg:order-2"><span
+                class="inline-block px-4 py-1.5 rounded-full bg-vanza-primary/10 text-vanza-primary text-sm font-bold tracking-wide uppercase mb-4">For
+                Businesses</span>
+              <h2
+                class="font-playfair text-4xl lg:text-5xl font-bold text-vanza-textDark mb-4">
+                Commercial Cleaning</h2>
+              <p class="text-vanza-textDark/70 text-lg mb-6 leading-relaxed">
+                Maintain a pristine, professional environment for your team and
+                clients. Tailored solutions for offices, retail, medical
+                facilities with flexible scheduling.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Daily, weekly, or custom
+                    schedules</span></li>
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Offices, retail, medical, and
+                    industrial spaces</span></li>
+                <li class="flex items-start gap-3"><i
+                    class="fa-solid fa-circle-check text-vanza-primary mt-1 flex-shrink-0"></i><span
+                    class="text-vanza-textDark">Fully insured and DBS-checked
+                    staff</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-4 items-center"><a href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-vanza-primary text-vanza-white rounded-full font-bold hover:bg-vanza-dark transition-all shadow-lg hover:shadow-xl">
+                  Request Quote
+                </a><a href="commercial-cleaning.html"
+                  class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-vanza-primary text-vanza-primary rounded-full font-bold hover:bg-vanza-primary hover:text-vanza-white transition-all">
+                  Find out more
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div><!-- Additional Services Grid -->
+    <section id="additional-services" class="py-20 bg-vanza-dark w-full">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-playfair text-4xl font-bold text-vanza-white mb-4">
+            Specialized Add-ons</h2>
+          <p class="text-vanza-white/70 text-lg max-w-2xl mx-auto">Enhance your
+            cleaning package with our specialized services.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Add-on 1 -->
+          <div id="it5wti"
+            class="bg-vanza-white/5 border border-vanza-white/10 rounded-2xl p-6 hover-lift reveal">
+            <div
+              class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent text-xl mb-4">
+              <i class="fa-solid fa-rug"></i></div>
+            <h3 class="font-bold text-vanza-white mb-2">Carpet Cleaning</h3>
+            <p class="text-vanza-white/60 text-sm mb-4">Hot water extraction for
+              deep stain removal.</p>
+          </div><!-- Add-on 2 -->
+          <div id="ikcbq3"
+            class="bg-vanza-white/5 border border-vanza-white/10 rounded-2xl p-6 hover-lift reveal">
+            <div
+              class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent text-xl mb-4">
+              <i class="fa-solid fa-fire-burner"></i></div>
+            <h3 class="font-bold text-vanza-white mb-2">Oven Cleaning</h3>
+            <p class="text-vanza-white/60 text-sm mb-4">Professional degreasing
+              and carbon removal.</p>
+          </div><!-- Add-on 3 -->
+          <div id="iq800g"
+            class="bg-vanza-white/5 border border-vanza-white/10 rounded-2xl p-6 hover-lift reveal">
+            <div
+              class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent text-xl mb-4">
+              <i class="fa-solid fa-window-maximize"></i></div>
+            <h3 class="font-bold text-vanza-white mb-2">Window Cleaning</h3>
+            <p class="text-vanza-white/60 text-sm mb-4">Interior and exterior
+              streak-free shine.</p>
+          </div><!-- Add-on 4 -->
+          <div id="i3sfjl"
+            class="bg-vanza-white/5 border border-vanza-white/10 rounded-2xl p-6 hover-lift reveal">
+            <div
+              class="w-12 h-12 rounded-xl bg-vanza-white/10 flex items-center justify-center text-vanza-accent text-xl mb-4">
+              <i class="fa-solid fa-couch"></i></div>
+            <h3 class="font-bold text-vanza-white mb-2">Upholstery</h3>
+            <p class="text-vanza-white/60 text-sm mb-4">Revitalize sofas,
+              chairs, and mattresses.</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- Footer -->
+    <footer id="footer"
+      class="bg-vanza-textDark text-vanza-white pt-20 pb-10 w-full">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- Brand -->
+          <div><a href="#" class="flex items-center gap-3 mb-6"><span
+                class="font-playfair text-2xl font-bold tracking-tight">Vanza
+                Properties Ltd (Trading as Vanza Cleaning)</span></a>
+            <p class="text-vanza-white/60 text-sm leading-relaxed mb-6">
+              London's premier cleaning service, dedicated to providing
+              impeccable results and unmatched care for your home or business.
+            </p>
+          </div><!-- Services Links -->
+          <div>
+            <h4 class="font-bold text-lg mb-6">Services</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Deep
+                  Cleaning</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">End of
+                  Tenancy</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Recurring
+                  Cleans</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">One-Off
+                  Cleaning</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Commercial
+                  Cleaning</a></li>
+            </ul>
+          </div><!-- Company Links -->
+          <div>
+            <h4 class="font-bold text-lg mb-6">Company</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">About Us</a>
+              </li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">How It
+                  Works</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">FAQ</a></li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Contact</a>
+              </li>
+              <li><a href="#"
+                  class="hover:text-vanza-accent transition-colors">Careers</a>
+              </li>
+            </ul>
+          </div><!-- Contact Info -->
+          <div>
+            <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li class="flex items-start gap-3"><i
+                  class="fa-solid fa-location-dot mt-1 text-vanza-accent"></i><span
+                  id="iwvjv8">128 City Road. London, EC1V 2NX</span></li>
+              <li class="flex items-center gap-3"><i
+                  class="fa-solid fa-phone text-vanza-accent"></i><a
+                  href="tel:+442012345678"
+                  class="hover:text-vanza-accent transition-colors">020 1234
+                  5678</a></li>
+              <li class="flex items-center gap-3"><i
+                  class="fa-solid fa-envelope text-vanza-accent"></i><a
+                  href="mailto:hello@vanzacleaning.co.uk"
+                  class="hover:text-vanza-accent transition-colors">hello@vanzacleaning.co.uk</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-vanza-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-vanza-white/40">
+          <p id="i5bqax">© 2024 Vanza Cleaning Services. All rights reserved.
+          </p>
+          <div class="flex gap-6"><a href="#"
+              class="hover:text-vanza-white transition-colors">Privacy
+              Policy</a><a href="#"
+              class="hover:text-vanza-white transition-colors">Terms of
+              Service</a></div>
+        </div>
+      </div>
+    </footer><!-- Scripts -->
+    <script>
+      // Reveal on Scroll
+      function reveal()
+      {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++)
+        {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible)
+          {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal(); // Trigger on load
+    </script>
+    <script src="js/vanza.js" defer></script>
+</body>
+
+</html>
