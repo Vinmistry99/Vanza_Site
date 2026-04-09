@@ -427,18 +427,21 @@
               </div>
               <form id="main-contact-form"
                 onsubmit="event.preventDefault(); submitForm();"
-                class="space-y-6">
+                class="space-y-6 relative">
+                <!-- Honeypot (FormSubmit spam trap — leave empty) -->
+                <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute opacity-0 pointer-events-none h-0 w-0 overflow-hidden">
+                <div id="form-error" role="alert" class="hidden rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <!-- Name -->
                   <div class="space-y-2"><label for="name"
                       class="block text-sm font-medium text-vanza-textDark/80">Full
-                      Name</label><input type="text" id="name" required=""
+                      Name</label><input type="text" id="name" name="name" required=""
                       placeholder="John Doe"
                       class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30">
                   </div><!-- Email -->
                   <div class="space-y-2"><label for="email"
                       class="block text-sm font-medium text-vanza-textDark/80">Email
-                      Address</label><input type="email" id="email" required=""
+                      Address</label><input type="email" id="email" name="email" required=""
                       placeholder="john@example.com"
                       class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30">
                   </div>
@@ -447,13 +450,13 @@
                   <!-- Phone -->
                   <div class="space-y-2"><label for="phone"
                       class="block text-sm font-medium text-vanza-textDark/80">Phone
-                      Number (Optional)</label><input type="tel" id="phone"
+                      Number (Optional)</label><input type="tel" id="phone" name="phone"
                       placeholder="07700 900000"
                       class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30">
                   </div><!-- Subject Dropdown -->
                   <div class="space-y-2"><label for="subject"
                       class="block text-sm font-medium text-vanza-textDark/80">Subject</label>
-                    <div class="relative"><select id="subject" required=""
+                    <div class="relative"><select id="subject" name="subject" required=""
                         class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark appearance-none cursor-pointer">
                         <option value="" disabled="" selected="">Select an
                           inquiry type</option>
@@ -471,7 +474,7 @@
                 </div><!-- Message -->
                 <div class="space-y-2"><label for="message"
                     class="block text-sm font-medium text-vanza-textDark/80">Your
-                    Message</label><textarea id="message" required="" rows="5" placeholder="How can we help you today?" class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30 resize-none"></textarea>
+                    Message</label><textarea id="message" name="message" required="" rows="5" placeholder="How can we help you today?" class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark placeholder:text-vanza-textDark/30 resize-none"></textarea>
                 </div><!-- Privacy Checkbox -->
                 <div class="flex items-start gap-3 pt-2">
                   <div class="flex items-center h-5"><input id="privacy"
@@ -589,6 +592,8 @@
                   Works</a></li>
               <li><a href="faq.html"
                   class="hover:text-vanza-accent transition-colors">FAQ</a></li>
+              <li><a href="referral-program.html"
+                  class="hover:text-vanza-accent transition-colors">Referral Program</a></li>
               <li><a href="contact.html"
                   class="hover:text-vanza-accent transition-colors">Contact</a>
               </li>
@@ -626,39 +631,126 @@
       </div>
     </footer>
     <script>
-      // Form Submission Simulation
-      function submitForm()
+      /** Delivered via FormSubmit (https://formsubmit.co) to contact@vanzacleaning.com — activate the address once via FormSubmit’s first email. */
+      const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/contact@vanzacleaning.com';
+
+      const SUBJECT_LABELS = {
+        general: 'General Inquiry',
+        quote: 'Request a Quote',
+        booking: 'Existing Booking',
+        commercial: 'Commercial Services',
+        feedback: 'Feedback'
+      };
+
+      function hideFormError()
+      {
+        const el = document.getElementById('form-error');
+        if (el)
+        {
+          el.classList.add('hidden');
+          el.textContent = '';
+        }
+      }
+
+      function showFormError(msg)
+      {
+        const el = document.getElementById('form-error');
+        if (el)
+        {
+          el.textContent = msg;
+          el.classList.remove('hidden');
+        }
+      }
+
+      async function submitForm()
       {
         const btnText = document.getElementById('btn-text');
         const btnLoader = document.getElementById('btn-loader');
         const submitBtn = document.getElementById('submit-btn');
         const formContainer = document.getElementById('contact-form-container');
         const successMessage = document.getElementById('success-message');
+        const form = document.getElementById('main-contact-form');
 
-        // Show loading state
+        hideFormError();
+
+        const honey = form.querySelector('[name="_honey"]');
+        if (honey && honey.value !== '')
+        {
+          return;
+        }
+
+        const name = (document.getElementById('name') || {}).value.trim();
+        const email = (document.getElementById('email') || {}).value.trim();
+        const phone = (document.getElementById('phone') || {}).value.trim();
+        const subjectKey = (document.getElementById('subject') || {}).value;
+        const message = (document.getElementById('message') || {}).value.trim();
+
+        if (!name || !email || !subjectKey || !message)
+        {
+          showFormError('Please fill in all required fields.');
+          return;
+        }
+
+        const subjectLabel = SUBJECT_LABELS[subjectKey] || subjectKey;
+
         btnText.classList.add('invisible');
         btnLoader.classList.remove('hidden');
         submitBtn.disabled = true;
 
-        // Simulate API call
-        setTimeout(() =>
-        {
-          // Hide form, show success
-          formContainer.classList.add('form-hidden');
+        const payload = {
+          name: name,
+          email: email,
+          phone: phone || '(not provided)',
+          message: message,
+          inquiry_type: subjectLabel,
+          _subject: 'Vanza website: ' + subjectLabel,
+          _replyto: email,
+          _template: 'table'
+        };
 
+        try
+        {
+          const res = await fetch(FORMSUBMIT_ENDPOINT, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await res.json().catch(() => ({}));
+
+          if (!res.ok)
+          {
+            const errMsg = data.message || data.error || ('Request failed (' + res.status + ')');
+            throw new Error(errMsg);
+          }
+
+          if (data.success === false || data.success === 'false')
+          {
+            throw new Error(data.message || 'Submission was not accepted.');
+          }
+
+          formContainer.classList.add('form-hidden');
           successMessage.classList.remove('hidden');
-          // Trigger reflow to restart animation
           void successMessage.offsetWidth;
           successMessage.classList.add('success-enter-active');
-
-          // Reset button state for next time
+          form.reset();
+        }
+        catch (e)
+        {
+          showFormError(
+            e.message ||
+              'Something went wrong. Please email contact@vanzacleaning.com or call 07500 713 537.'
+          );
+        }
+        finally
+        {
           btnText.classList.remove('invisible');
           btnLoader.classList.add('hidden');
           submitBtn.disabled = false;
-
-          // Clear form
-          document.getElementById('main-contact-form').reset();
-        }, 1500);
+        }
       }
 
       function resetForm()
@@ -666,6 +758,7 @@
         const formContainer = document.getElementById('contact-form-container');
         const successMessage = document.getElementById('success-message');
 
+        hideFormError();
         successMessage.classList.remove('success-enter-active');
         successMessage.classList.add('hidden');
         formContainer.classList.remove('form-hidden');

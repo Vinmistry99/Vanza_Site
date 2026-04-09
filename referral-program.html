@@ -1,0 +1,397 @@
+<html lang="en">
+
+  <head>
+    <script>
+      window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Earn £20 for every new client you refer to Vanza Cleaning Services. Simple steps, no limit — cash reward when their clean is complete.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vanzacleaning.co.uk/referral-program.html">
+    <meta property="og:title" content="£20 Referral Program | Vanza Cleaning Services">
+    <meta property="og:description" content="Refer friends and family to Vanza Cleaning and earn £20 for each completed booking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vanzacleaning.co.uk/referral-program.html">
+
+    <title>£20 Referral Program | Vanza Cleaning Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vanza: {
+                primary: '#1a7a6e',
+                dark: '#0e4d44',
+                accent: '#23a090',
+                bg: '#faf8f5',
+                white: '#ffffff',
+                textDark: '#1a1f1e'
+              }
+            },
+            fontFamily: {
+              playfair: ['"Playfair Display"', 'serif'],
+              sans: ['"DM Sans"', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+      body { margin: 0; padding: 0; }
+      ::-webkit-scrollbar { display: none; }
+      #scroll-progress {
+        position: fixed; top: 0; left: 0; height: 3px;
+        background: linear-gradient(to right, #1a7a6e, #23a090);
+        width: 0%; z-index: 1000; transition: width 0.1s ease;
+      }
+      .nav-link { position: relative; }
+      .nav-link::after {
+        content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0;
+        background-color: #1a7a6e; transition: width 0.3s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after { width: 100%; }
+    </style>
+    <link rel="stylesheet" href="css/vanza.css">
+  </head>
+
+  <body class="m-0 p-0 bg-vanza-bg font-sans text-vanza-textDark overflow-x-hidden">
+    <div id="scroll-progress"></div>
+    <div id="top-bar" class="bg-vanza-dark text-vanza-white py-2 px-6 text-sm hidden md:block w-full z-50 relative">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex gap-6">
+          <a href="mailto:contact@vanzacleaning.com" class="flex items-center gap-2 hover:text-vanza-accent transition-colors"><i class="fa-regular fa-envelope"></i> contact@vanzacleaning.com</a>
+          <a href="tel:+447500713537" class="flex items-center gap-2 hover:text-vanza-accent transition-colors"><i class="fa-solid fa-phone"></i> 07500 713 537</a>
+        </div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Serving Central &amp; Greater London</div>
+      </div>
+    </div>
+    <header id="header" class="bg-vanza-white sticky top-0 z-40 w-full shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 group"><span class="font-playfair text-2xl font-bold tracking-tight text-vanza-textDark">Vanza Cleaning</span></a>
+        <nav id="primary-nav" class="hidden lg:flex items-center gap-8">
+          <a href="index.html" class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Home</a>
+          <a href="about.html" class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">About Us</a>
+          <a href="services.html" class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Services</a>
+          <a href="faq.html" class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">FAQ</a>
+          <a href="contact.html" class="nav-link font-medium text-vanza-textDark hover:text-vanza-primary transition-colors">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-vanza-primary text-vanza-white rounded-full font-medium hover:bg-vanza-dark transition-colors shadow-[0_4px_14px_rgba(26,122,110,0.3)]">Get a Free Quote</a>
+          <button data-nav-toggle aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" class="lg:hidden text-vanza-textDark text-2xl p-2 focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="relative w-full overflow-hidden bg-gradient-to-br from-vanza-dark to-vanza-primary py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vanza-white/10 backdrop-blur-sm border border-vanza-white/20 text-vanza-white text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-vanza-accent"></span> Rewards
+        </div>
+        <h1 class="font-playfair text-4xl md:text-5xl font-bold text-vanza-white mb-4">£20 Cash Referral Program</h1>
+        <p class="text-vanza-white/90 text-lg max-w-2xl mx-auto mb-2">Earn easy money by sharing our trusted cleaning services with friends and family.</p>
+        <p class="text-vanza-white/70 text-sm max-w-xl mx-auto">Designed for UK homeowners and renters who value quality cleaning — turn your satisfaction into real cash rewards.</p>
+      </div>
+      <div class="absolute top-0 right-0 w-96 h-96 bg-vanza-accent/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-vanza-primary/30 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-vanza-bg border-b border-vanza-textDark/5">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+        <div class="bg-vanza-white rounded-2xl p-8 border border-vanza-textDark/5 shadow-sm text-center">
+          <p class="font-playfair text-4xl font-bold text-vanza-primary mb-2">£20</p>
+          <p class="font-semibold text-vanza-textDark mb-1">Per referral</p>
+          <p class="text-sm text-vanza-textDark/70">Cash for each new client you refer who completes a clean.</p>
+        </div>
+        <div class="bg-vanza-white rounded-2xl p-8 border border-vanza-textDark/5 shadow-sm text-center">
+          <p class="font-playfair text-4xl font-bold text-vanza-primary mb-2">100%</p>
+          <p class="font-semibold text-vanza-textDark mb-1">Reward when complete</p>
+          <p class="text-sm text-vanza-textDark/70">We pay you once their cleaning is completed to their satisfaction.</p>
+        </div>
+        <div class="bg-vanza-white rounded-2xl p-8 border border-vanza-textDark/5 shadow-sm text-center">
+          <p class="font-playfair text-4xl font-bold text-vanza-primary mb-2">∞</p>
+          <p class="font-semibold text-vanza-textDark mb-1">No limit</p>
+          <p class="text-sm text-vanza-textDark/70">Refer as many people as you like — every qualifying booking counts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-vanza-textDark text-center mb-4">How it works: three simple steps</h2>
+        <p class="text-center text-vanza-textDark/75 max-w-2xl mx-auto mb-12">No complicated forms or tracking codes — share our service, they mention you when booking, you get paid when the clean is done.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="relative rounded-2xl border border-vanza-primary/15 bg-vanza-bg/50 p-8">
+            <span class="absolute -top-3 left-8 w-10 h-10 rounded-full bg-vanza-primary text-vanza-white flex items-center justify-center font-bold text-sm">1</span>
+            <h3 class="font-playfair text-xl font-bold text-vanza-textDark mt-4 mb-3">Recommend our services</h3>
+            <p class="text-vanza-textDark/75 text-sm leading-relaxed">Tell friends, family, or contacts about our reliable cleaning. Share why you love our work and how it has improved your home.</p>
+          </div>
+          <div class="relative rounded-2xl border border-vanza-primary/15 bg-vanza-bg/50 p-8">
+            <span class="absolute -top-3 left-8 w-10 h-10 rounded-full bg-vanza-primary text-vanza-white flex items-center justify-center font-bold text-sm">2</span>
+            <h3 class="font-playfair text-xl font-bold text-vanza-textDark mt-4 mb-3">They book &amp; mention you</h3>
+            <p class="text-vanza-textDark/75 text-sm leading-relaxed">When your referral books, they tell us they were <strong class="text-vanza-textDark">referred by you</strong> (your full name). New customers only.</p>
+          </div>
+          <div class="relative rounded-2xl border border-vanza-primary/15 bg-vanza-bg/50 p-8">
+            <span class="absolute -top-3 left-8 w-10 h-10 rounded-full bg-vanza-primary text-vanza-white flex items-center justify-center font-bold text-sm">3</span>
+            <h3 class="font-playfair text-xl font-bold text-vanza-textDark mt-4 mb-3">Get your £20</h3>
+            <p class="text-vanza-textDark/75 text-sm leading-relaxed">Once their cleaning is completed and they are satisfied, we transfer <strong class="text-vanza-textDark">£20</strong> to your bank account or preferred payment method — usually within <strong class="text-vanza-textDark">3–5 working days</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-bg">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-vanza-textDark text-center mb-4">Earn as much as you want</h2>
+        <p class="text-center text-vanza-textDark/75 max-w-2xl mx-auto mb-12">No quotas, no expiration on referrals — every qualifying completed clean means £20 for you.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5 shadow-sm">
+            <p class="text-vanza-primary font-playfair text-3xl font-bold">£20</p>
+            <p class="font-semibold text-vanza-textDark mt-1">Refer 1 person</p>
+            <p class="text-sm text-vanza-textDark/65 mt-2">Your first reward</p>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5 shadow-sm">
+            <p class="text-vanza-primary font-playfair text-3xl font-bold">£100</p>
+            <p class="font-semibold text-vanza-textDark mt-1">Refer 5 people</p>
+            <p class="text-sm text-vanza-textDark/65 mt-2">A great extra boost</p>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5 shadow-sm">
+            <p class="text-vanza-primary font-playfair text-3xl font-bold">£200</p>
+            <p class="font-semibold text-vanza-textDark mt-1">Refer 10 people</p>
+            <p class="text-sm text-vanza-textDark/65 mt-2">Serious monthly help</p>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-primary/25 shadow-[0_8px_30px_rgba(26,122,110,0.12)]">
+            <p class="text-vanza-primary font-playfair text-3xl font-bold">£1,000+</p>
+            <p class="font-semibold text-vanza-textDark mt-1">Keep referring</p>
+            <p class="text-sm text-vanza-textDark/65 mt-2">Imagine consistent referrals over time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-vanza-textDark text-center mb-12">Why people trust Vanza</h2>
+        <div class="grid sm:grid-cols-2 gap-8">
+          <div class="flex gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-vanza-primary/10 flex items-center justify-center text-vanza-primary"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h3 class="font-semibold text-vanza-textDark mb-2">Reliable &amp; professional</h3>
+              <p class="text-sm text-vanza-textDark/75 leading-relaxed">Vetted, background-checked cleaners trained for consistent quality. You can trust us with your home.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-vanza-primary/10 flex items-center justify-center text-vanza-primary"><i class="fa-solid fa-sparkles"></i></div>
+            <div>
+              <h3 class="font-semibold text-vanza-textDark mb-2">High-quality results</h3>
+              <p class="text-sm text-vanza-textDark/75 leading-relaxed">From bathrooms to kitchens, we deliver professional results that make your home shine.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-vanza-primary/10 flex items-center justify-center text-vanza-primary"><i class="fa-solid fa-heart"></i></div>
+            <div>
+              <h3 class="font-semibold text-vanza-textDark mb-2">Trusted by clients</h3>
+              <p class="text-sm text-vanza-textDark/75 leading-relaxed">Thousands of UK homeowners and renters rely on us — our reputation is built on trust and satisfaction.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-vanza-primary/10 flex items-center justify-center text-vanza-primary"><i class="fa-solid fa-handshake"></i></div>
+            <div>
+              <h3 class="font-semibold text-vanza-textDark mb-2">Friendly team</h3>
+              <p class="text-sm text-vanza-textDark/75 leading-relaxed">Professional, respectful, and committed to a positive experience from first contact to final clean.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-bg">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-vanza-textDark text-center mb-12">What sets us apart</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <i class="fa-regular fa-calendar-check text-vanza-primary text-xl mb-3"></i>
+            <h3 class="font-semibold text-vanza-textDark mb-2">Flexible booking</h3>
+            <p class="text-sm text-vanza-textDark/75">One-off deep cleans or regular visits — we work around your schedule.</p>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <i class="fa-solid fa-rotate-left text-vanza-primary text-xl mb-3"></i>
+            <h3 class="font-semibold text-vanza-textDark mb-2">Quality guaranteed</h3>
+            <p class="text-sm text-vanza-textDark/75">Not satisfied? We will re-clean problem areas at no extra cost.</p>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <i class="fa-solid fa-lock text-vanza-primary text-xl mb-3"></i>
+            <h3 class="font-semibold text-vanza-textDark mb-2">Insured &amp; secure</h3>
+            <p class="text-sm text-vanza-textDark/75">Fully insured cleaners — your home and belongings are protected.</p>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <i class="fa-solid fa-sliders text-vanza-primary text-xl mb-3"></i>
+            <h3 class="font-semibold text-vanza-textDark mb-2">Customisable</h3>
+            <p class="text-sm text-vanza-textDark/75">Tell us what matters most and we will tailor the service to you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-vanza-textDark text-center mb-6">Start earning without booking yourself</h2>
+        <p class="text-vanza-textDark/75 text-center mb-10">You do not need to book a clean for yourself to refer someone. If you know anyone who needs help keeping their home clean — busy parents, professionals, neighbours moving home, or elderly relatives — share our details and ask them to mention your name when they book.</p>
+        <p class="text-sm font-semibold text-vanza-textDark mb-4 text-center">This program is ideal if you:</p>
+        <ul class="grid sm:grid-cols-2 gap-3 text-sm text-vanza-textDark/80 max-w-2xl mx-auto">
+          <li class="flex gap-2 items-start"><i class="fa-solid fa-check text-vanza-primary mt-0.5"></i><span>Know people short on time for cleaning</span></li>
+          <li class="flex gap-2 items-start"><i class="fa-solid fa-check text-vanza-primary mt-0.5"></i><span>Have friends moving into a new home</span></li>
+          <li class="flex gap-2 items-start"><i class="fa-solid fa-check text-vanza-primary mt-0.5"></i><span>Know elderly relatives who need help</span></li>
+          <li class="flex gap-2 items-start"><i class="fa-solid fa-check text-vanza-primary mt-0.5"></i><span>Work with colleagues who could benefit</span></li>
+          <li class="flex gap-2 items-start sm:col-span-2 justify-center"><i class="fa-solid fa-check text-vanza-primary mt-0.5"></i><span>Are part of community groups or local networks</span></li>
+        </ul>
+        <p class="text-center text-vanza-textDark/75 text-sm mt-10">We will handle the rest — you get <strong class="text-vanza-textDark">£20</strong> once their cleaning is complete.</p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-dark text-vanza-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-12">How to refer someone</h2>
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start border-b border-vanza-white/10 pb-6">
+            <span class="shrink-0 w-8 h-8 rounded-full bg-vanza-accent/30 flex items-center justify-center text-sm font-bold">1</span>
+            <div>
+              <p class="font-semibold">Share our details</p>
+              <p class="text-vanza-white/70 text-sm mt-1">Give them our phone number, email, or a link to this website.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start border-b border-vanza-white/10 pb-6">
+            <span class="shrink-0 w-8 h-8 rounded-full bg-vanza-accent/30 flex items-center justify-center text-sm font-bold">2</span>
+            <div>
+              <p class="font-semibold">They mention you</p>
+              <p class="text-vanza-white/70 text-sm mt-1">They tell us <em>referred by [your name]</em> when booking — first-time customers only.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start border-b border-vanza-white/10 pb-6">
+            <span class="shrink-0 w-8 h-8 rounded-full bg-vanza-accent/30 flex items-center justify-center text-sm font-bold">3</span>
+            <div>
+              <p class="font-semibold">We clean their home</p>
+              <p class="text-vanza-white/70 text-sm mt-1">We deliver the service and complete their cleaning to their satisfaction.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="shrink-0 w-8 h-8 rounded-full bg-vanza-accent/30 flex items-center justify-center text-sm font-bold">4</span>
+            <div>
+              <p class="font-semibold">You get paid</p>
+              <p class="text-vanza-white/70 text-sm mt-1">We transfer £20 to you within 3–5 working days after completion.</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-vanza-white/60 text-sm mt-10 max-w-2xl mx-auto">Want referral materials or to confirm your details? <a href="contact.html" class="text-vanza-accent underline hover:text-vanza-white">Contact us</a> — we can keep you updated when referrals book and complete.</p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-vanza-bg">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="font-playfair text-3xl font-bold text-vanza-textDark text-center mb-10">Common questions</h2>
+        <dl class="space-y-6">
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <dt class="font-semibold text-vanza-textDark mb-2">How will I receive my £20?</dt>
+            <dd class="text-sm text-vanza-textDark/75">We can pay by bank transfer, PayPal, or another agreed method — you choose what works best.</dd>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <dt class="font-semibold text-vanza-textDark mb-2">When will I get paid?</dt>
+            <dd class="text-sm text-vanza-textDark/75">After your referral’s cleaning is completed and they are satisfied, we process payment within 3–5 working days.</dd>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <dt class="font-semibold text-vanza-textDark mb-2">Can I refer multiple people?</dt>
+            <dd class="text-sm text-vanza-textDark/75">Yes — there is no limit. Each qualifying new client who completes a clean earns you £20.</dd>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <dt class="font-semibold text-vanza-textDark mb-2">Does my referral need to be a first-time customer?</dt>
+            <dd class="text-sm text-vanza-textDark/75">Yes. The reward applies when they are a <strong class="text-vanza-textDark">new customer</strong> who has not used our services before.</dd>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <dt class="font-semibold text-vanza-textDark mb-2">Do referrals expire?</dt>
+            <dd class="text-sm text-vanza-textDark/75">No — as long as they mention your name when they first book, you qualify for the reward when that clean completes.</dd>
+          </div>
+          <div class="bg-vanza-white rounded-2xl p-6 border border-vanza-textDark/5">
+            <dt class="font-semibold text-vanza-textDark mb-2">Can I track my referrals?</dt>
+            <dd class="text-sm text-vanza-textDark/75">We can keep you updated on status and notify you when each referral books and completes their service — ask when you <a href="contact.html" class="text-vanza-primary underline">get in touch</a>.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-gradient-to-br from-vanza-primary to-vanza-dark text-vanza-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4">Ready to start earning?</h2>
+        <p class="text-vanza-white/85 mb-10 max-w-2xl mx-auto">Share our details and make sure your referral mentions your name when they book. Every completed clean could mean another £20 for you.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="tel:+447500713537" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-vanza-white text-vanza-primary rounded-full font-semibold hover:bg-vanza-bg transition-colors shadow-lg"><i class="fa-solid fa-phone"></i> 07500 713 537</a>
+          <a href="mailto:contact@vanzacleaning.com" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-vanza-white/80 text-vanza-white rounded-full font-semibold hover:bg-vanza-white/10 transition-colors"><i class="fa-regular fa-envelope"></i> contact@vanzacleaning.com</a>
+        </div>
+        <p class="mt-8 text-sm text-vanza-white/70"><a href="index.html" class="underline hover:text-white">Visit our homepage</a> to explore services, or <a href="contact.html" class="underline hover:text-white">request a quote</a>.</p>
+      </div>
+    </section>
+
+    <footer class="bg-vanza-dark text-vanza-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <h3 class="font-playfair text-2xl font-bold mb-6">Vanza Cleaning</h3>
+            <p class="text-vanza-white/60 text-sm leading-relaxed mb-6">Professional cleaning services across Central &amp; Greater London. Quality you can trust, results you will love.</p>
+            <div class="flex gap-4">
+              <a href="https://www.facebook.com/vanzacleaningltd" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-vanza-white/10 flex items-center justify-center hover:bg-vanza-primary transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/vanza_cleaning/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-vanza-white/10 flex items-center justify-center hover:bg-vanza-primary transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-6">Services</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li><a href="residential-cleaning.html" class="hover:text-vanza-accent transition-colors">Residential Cleaning</a></li>
+              <li><a href="commercial-cleaning.html" class="hover:text-vanza-accent transition-colors">Commercial Cleaning</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-6">Company</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li><a href="about.html" class="hover:text-vanza-accent transition-colors">About Us</a></li>
+              <li><a href="services.html" class="hover:text-vanza-accent transition-colors">How It Works</a></li>
+              <li><a href="faq.html" class="hover:text-vanza-accent transition-colors">FAQ</a></li>
+              <li><a href="referral-program.html" class="hover:text-vanza-accent transition-colors">Referral Program</a></li>
+              <li><a href="contact.html" class="hover:text-vanza-accent transition-colors">Contact</a></li>
+              <li><a href="contact.html" class="hover:text-vanza-accent transition-colors">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+            <ul class="space-y-4 text-vanza-white/60 text-sm">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-vanza-accent"></i><span>128 City Road, London, EC1V 2NX</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-vanza-accent"></i><a href="tel:+447500713537" class="hover:text-vanza-accent transition-colors">07500 713 537</a></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-vanza-accent"></i><a href="mailto:contact@vanzacleaning.com" class="hover:text-vanza-accent transition-colors">contact@vanzacleaning.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-vanza-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-vanza-white/40">
+          <p>© 2026 Vanza Cleaning Services. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="privacy.html" class="hover:text-vanza-white transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-vanza-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/vanza.js" defer></script>
+  </body>
+
+</html>
