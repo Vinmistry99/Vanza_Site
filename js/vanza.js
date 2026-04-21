@@ -56,3 +56,8 @@
     initMobileNav();
   }
 })();
+
+window.openAtienSparkChat = function () {
+  var toggle = document.getElementById('atien-chat-toggle');
+  if (toggle) toggle.click();
+};

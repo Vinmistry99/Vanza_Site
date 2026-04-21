@@ -269,6 +269,7 @@
             class="nav-link active font-medium text-vanza-primary">Contact</a>
         </nav><!-- CTA & Mobile Menu -->
         <div class="flex items-center gap-4"><a href="#"
+            onclick="window.openAtienSparkChat();return false;"
             class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-vanza-primary text-vanza-white rounded-full font-medium hover:bg-vanza-dark transition-colors shadow-[0_4px_14px_rgba(26,122,110,0.3)] hover:shadow-[0_6px_20px_rgba(26,122,110,0.4)]">
             Get a Free Quote
           </a><button
@@ -457,6 +458,7 @@
                   <div class="space-y-2"><label for="subject"
                       class="block text-sm font-medium text-vanza-textDark/80">Subject</label>
                     <div class="relative"><select id="subject" name="subject" required=""
+                        onchange="if(this.value==='quote')window.openAtienSparkChat();"
                         class="w-full px-5 py-3.5 bg-vanza-bg border border-vanza-textDark/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-vanza-primary/30 focus:border-vanza-primary transition-all text-vanza-textDark appearance-none cursor-pointer">
                         <option value="" disabled="" selected="">Select an
                           inquiry type</option>
@@ -765,6 +767,7 @@
       }
     </script>
     <script src="js/vanza.js" defer></script>
+    <script src="js/atien-spark-embed.js" defer></script>
 </body>
 
 </html>
